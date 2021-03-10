@@ -23,6 +23,12 @@ extension Report {
         set { month_ = Int16(newValue) }
     }
 
+    #warning("write tests for this")
+    public var monthStr: String {
+        get { monthStr_ ?? "" }
+        set { monthStr_ = newValue }
+    }
+
     public var year: Int {
         get { Int(year_) }
         set { year_ = Int16(newValue) }

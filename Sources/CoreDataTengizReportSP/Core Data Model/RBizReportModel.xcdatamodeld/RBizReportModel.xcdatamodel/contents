@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Report" representedClassName="Report" syncable="YES" codeGenerationType="class">
         <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="company_" optional="YES" attributeType="String"/>
         <attribute name="dailyAverage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="month_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="monthStr_" optional="YES" attributeType="String"/>
         <attribute name="note_" optional="YES" attributeType="String"/>
         <attribute name="openingBalance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="revenue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -32,7 +33,7 @@
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReportGroup" inverseName="items_" inverseEntity="ReportGroup"/>
     </entity>
     <elements>
-        <element name="Report" positionX="-181.9793701171875" positionY="-125.5101318359375" width="128" height="209"/>
+        <element name="Report" positionX="-181.9793701171875" positionY="-125.5101318359375" width="128" height="224"/>
         <element name="ReportGroup" positionX="32.87994384765625" positionY="-20.8553466796875" width="128" height="148"/>
         <element name="ReportItem" positionX="256.269775390625" positionY="-62.33941650390625" width="128" height="119"/>
     </elements>
