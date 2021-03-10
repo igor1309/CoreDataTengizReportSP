@@ -8,53 +8,53 @@
 import Foundation
 
 extension Report {
-    var date: Date {
+    public var date: Date {
         get { date_ ?? .distantPast }
         set { date_ = newValue }
     }
 
-    var company: String {
+    public var company: String {
         get { company_ ?? "" }
         set { company_ = newValue }
     }
 
-    var month: Int {
+    public var month: Int {
         get { Int(month_) }
         set { month_ = Int16(newValue) }
     }
 
-    var year: Int {
+    public var year: Int {
         get { Int(year_) }
         set { year_ = Int16(newValue) }
     }
 
-    var note: String {
+    public var note: String {
         get { note_ ?? "" }
         set { note_ = newValue }
     }
 
-    var groups: [ReportGroup] {
+    public var groups: [ReportGroup] {
         get { (groups_ as? Set<ReportGroup> ?? []).sorted() }
         set { groups_ = Set(newValue) as NSSet }
     }
 
-    var calculatedTotalExpenses: Double {
+    public var calculatedTotalExpenses: Double {
         groups.map(\.amountCalculated).reduce(0, +)
     }
-    var totalExpensesDelta: Double { totalExpenses - calculatedTotalExpenses }
-    var isTotalExpensesMatch: Bool { totalExpenses == calculatedTotalExpenses }
+    public var totalExpensesDelta: Double { totalExpenses - calculatedTotalExpenses }
+    public var isTotalExpensesMatch: Bool { totalExpenses == calculatedTotalExpenses }
 
     #warning("finish with isTotalExpensesMatch logic")
-    var hasIssue: Bool {
+    public var hasIssue: Bool {
         // report has issue if at least one item (in any group) has issue OR totals don't match
         // !groups.flatMap(\.rows).map(\.hasIssue).allSatisfy { !$0 }
         !groups.map(\.hasIssue).allSatisfy { !$0 } && !isTotalExpensesMatch
     }
 
-    var isTotalOk: Bool {
+    public var isTotalOk: Bool {
         revenue - totalExpenses == balance
     }
-    var isBalanceOk: Bool {
+    public var isBalanceOk: Bool {
         runningBalance == openingBalance + balance
     }
 }

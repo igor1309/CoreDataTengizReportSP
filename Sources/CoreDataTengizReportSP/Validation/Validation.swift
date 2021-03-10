@@ -8,7 +8,7 @@
 import Foundation
 #warning("this or Validation SP???")
 extension Report {
-    static func isValid(
+    public static func isValid(
         company: String,
         month: Int,
         year: Int,
@@ -20,7 +20,7 @@ extension Report {
         nil == validationError(company: company, month: month, year: year, revenue: revenue, dailyAverage: dailyAverage, totalExpenses: totalExpenses)
     }
 
-    static func validationError(
+    public static func validationError(
         company: String,
         month: Int,
         year: Int,
@@ -42,11 +42,11 @@ extension Report {
 }
 
 extension ReportGroup {
-    static func isValid(title: String, groupNumber: Int) -> Bool {
+    public static func isValid(title: String, groupNumber: Int) -> Bool {
         nil == validationError(title: title, groupNumber: groupNumber)
     }
 
-    static func validationError(title: String, groupNumber: Int) -> EntityError.ReportGroupValidationError? {
+    public static func validationError(title: String, groupNumber: Int) -> EntityError.ReportGroupValidationError? {
         let cleanTitle = title.trimmingCharacters(in: .whitespaces)
         guard !cleanTitle.isEmpty else { return .emptyGroupTitle }
         guard groupNumber > 0 else { return .invalidGroupNumber }
@@ -56,11 +56,11 @@ extension ReportGroup {
 }
 
 extension ReportItem {
-    static func isValid(title: String, itemNumber: Int) -> Bool {
+    public static func isValid(title: String, itemNumber: Int) -> Bool {
         nil == validationError(title: title, itemNumber: itemNumber)
     }
 
-    static func validationError(title: String, itemNumber: Int) -> EntityError.ReportItemValidationError? {
+    public static func validationError(title: String, itemNumber: Int) -> EntityError.ReportItemValidationError? {
         let cleanTitle = title.trimmingCharacters(in: .whitespaces)
         guard !cleanTitle.isEmpty else { return .emptyItemTitle }
         guard itemNumber > 0 else { return .invalidItemNumber }

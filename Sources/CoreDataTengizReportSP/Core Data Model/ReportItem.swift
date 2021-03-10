@@ -8,22 +8,22 @@
 import Foundation
 
 extension ReportItem {
-    var title: String {
+    public var title: String {
         get { title_ ?? "" }
         set { title_ = newValue }
     }
 
-    var note: String {
+    public var note: String {
         get { note_ ?? "" }
         set { note_ = newValue }
     }
 
-    var itemNumber: Int {
+    public var itemNumber: Int {
         get { Int(itemNumber_) }
         set { itemNumber_ = Int16(newValue) }
     }
 
-    var isAmountMatch: Bool {
+    public var isAmountMatch: Bool {
         #warning("continue with ecomonis rows")
         return true
         //        amount == economicRows.map(\.amount).reduce(0, +)

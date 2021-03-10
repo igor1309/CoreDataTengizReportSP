@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum EntityError {
-    enum ReportValidationError: Error, Equatable {
+public enum EntityError {
+    public enum ReportValidationError: Error, Equatable {
         case emptyCompany
         case invalidMonth(Int)
         case invalidYear(Int)
@@ -17,19 +17,19 @@ enum EntityError {
         case invalidTotalExpenses(Double)
     }
 
-    enum ReportGroupValidationError: Error, Equatable {
+    public enum ReportGroupValidationError: Error, Equatable {
         case emptyGroupTitle
         case invalidGroupNumber
     }
 
-    enum ReportItemValidationError: Error, Equatable {
+    public enum ReportItemValidationError: Error, Equatable {
         case emptyItemTitle
         case invalidItemNumber
     }
 }
 
 extension EntityError.ReportValidationError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
             case .emptyCompany:
                 return NSLocalizedString(
@@ -71,7 +71,7 @@ extension EntityError.ReportValidationError: LocalizedError {
 }
 
 extension EntityError.ReportGroupValidationError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
             case .emptyGroupTitle:
                 return NSLocalizedString(
@@ -89,7 +89,7 @@ extension EntityError.ReportGroupValidationError: LocalizedError {
 }
 
 extension EntityError.ReportItemValidationError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
             case .emptyItemTitle:
                 return NSLocalizedString(

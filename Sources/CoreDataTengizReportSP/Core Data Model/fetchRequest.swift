@@ -7,7 +7,7 @@
 
 import CoreData
 
-extension Report {
+public extension Report {
     static func fetchRequest(forCompany company: String, month: Int) -> NSFetchRequest<Report> {
         let companyPredicate = NSPredicate(format: "%K == %@", #keyPath(Report.company_), company)
         let monthPredicate = NSPredicate(format: "%K == %@", #keyPath(Report.month_), NSNumber(value: month))
@@ -30,7 +30,7 @@ extension Report {
     }
 }
 
-extension ReportGroup {
+public extension ReportGroup {
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<ReportGroup> {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(ReportGroup.groupNumber_), ascending: true)
         return fetchRequest(predicate, sortDescriptors: [sortDescriptor])
@@ -44,7 +44,7 @@ extension ReportGroup {
     }
 }
 
-extension ReportItem {
+public extension ReportItem {
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<ReportItem> {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(ReportItem.itemNumber_), ascending: true)
         return fetchRequest(predicate, sortDescriptors: [sortDescriptor])
